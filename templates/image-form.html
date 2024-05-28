@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<form action="." method="POST" 
+    hx-post="{{request.path}}"
+    hx-encoding="multipart/form-data"
+>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Upload Image</button>
+</form>
+
+{% endblock %}
